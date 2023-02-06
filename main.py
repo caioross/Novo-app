@@ -20,7 +20,7 @@ def pne():
 def validar():
   acesso_u = "simone"
   acesso_s = "123"
-  if requests.method == 'POST':
+  if request.method == 'POST':
     usuario = request.form['c_usuario'] #chamando o meu usuario
     senha = request.form['c_senha']
     if usuario == acesso_u and senha == acesso_s:
@@ -28,7 +28,7 @@ def validar():
     else:
       return redirect(url_for('404'))
   else:
-    usuario = requests.args.get('c_usuario')
+    usuario = request.args.get('c_usuario')
     senha = request.args.get('c_senha')
     if usuario == acesso_u and senha == acesso_s:
      return redirect(url_for('membros'))
